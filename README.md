@@ -61,4 +61,17 @@ import {
   id = "arn:aws:elasticloadbalancing:ap-southeast-1:accountnumber:loadbalancer/app/yourlb/1b31a18d6112b922"
 }
 ```
+Create hidden file named `.terraform.version` and content 1.8.0 or greater
+```
+1.8.0
+```
+
+**Step2: Now that our preparation is finished, we can move on to the AWS:**
+Login to aws, part after the `--profile` had to be adjusted to your account
+```
+aws sso login --profile MuscleUser@csatrio-eci-dev
+eval "$(aws configure export-credentials --profile your-profile-name --format env)
+```
+then confirm and continue, you had no option anyway.
+![image](https://github.com/user-attachments/assets/5b7fbe6b-4622-4081-9ecc-59f9c59dbd75)
 
