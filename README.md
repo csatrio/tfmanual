@@ -67,9 +67,14 @@ Create hidden file named `.terraform.version` and content 1.8.0 or greater
 ```
 
 **Step2: Now that our preparation is finished, we can move on to the AWS:**
+We assume that you already install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+Now after the CLI has been installed, we need to install aws-export-credentials by
+```
+pip3 install aws-export-credentials --user --break-system-packages
+```
 Login to aws, part after the `--profile` had to be adjusted to your account
 ```
-aws sso login --profile MuscleUser@csatrio-eci-dev
+aws sso login --profile rolename@awsaccountname
 eval "$(aws configure export-credentials --profile your-profile-name --format env)
 ```
 then confirm and continue, you had no option anyway.
